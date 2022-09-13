@@ -34,7 +34,7 @@ function App() {
   }
   // for reload page after sign in
   useEffect(() => {
-    if (localStorage.getItem("token")) {
+    if (localStorage.getItem("token") !== null) {
       saveUserData();
     }
   }, []);
