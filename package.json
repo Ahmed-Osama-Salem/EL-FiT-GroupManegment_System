@@ -1,8 +1,8 @@
 {
   "name": "my-app",
   "version": "0.1.0",
-  "homepage": "http://Ahmed-Osama-Salem.github.io/EL-FiT-GroupManegment_System",
-  "private": false,
+  "homepage": "https://ahmed-osama-salem.github.io/EL-FiT-GroupManegment_System",
+  "private": true,
   "dependencies": {
     "@headlessui/react": "^1.6.6",
     "@heroicons/react": "^2.0.4",
