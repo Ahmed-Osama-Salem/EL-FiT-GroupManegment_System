@@ -1153,6 +1153,7 @@ h2 {
   .head-sign {
     flex-direction: column;
     height: 92%;
+    justify-content: center;
   }
 
   .header-text {
@@ -1172,14 +1173,23 @@ h2 {
     width: 310px;
   }
   .form {
-    width: 600px;
-    height: 700px;
-    margin: 0;
+    width: 700px;
+    height: 750px;
+    margin-top: 100px;
+    filter: drop-shadow(4px 4px 6px rgb(94, 84, 84));
   }
 
   .form input {
-    width: 500px;
+    width: 560px;
     font-size: 50px;
+    height: 100px;
+    margin: 30px 0;
+    transition: 0.2s ease-in-out;
+  }
+
+  .form input:focus {
+    transform: scale(1.05);
+    filter: drop-shadow(2px 2px 4px black);
   }
 
   .form-label {
@@ -1236,5 +1246,106 @@ h2 {
     width: 260px;
     padding: 7px;
     font-size: 30px;
+  }
+
+  .user-card {
+    width: 70%;
+    height: 1000px;
+  }
+
+  .user-card div {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 2.5rem;
+    line-height: 2.6;
+  }
+
+  .head-user {
+    margin-bottom: 70px;
+  }
+
+  .profile-card img {
+    width: 200px;
+  }
+
+  .head-user h2 {
+    color: #d50707;
+    font-size: 2.8rem;
+  }
+
+  .profile-card button {
+    width: 350px;
+    height: 120px;
+    padding: 5px;
+    font-size: 50px;
+  }
+
+  .sheets-sec {
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column-reverse;
+  }
+
+  .sheet1 {
+    margin-left: 0;
+  }
+
+  .sheet3 {
+    margin-bottom: 50px;
+    margin-top: 50px;
+  }
+
+  .sheets-sec img {
+    width: 398px;
+  }
+
+  .sheets-sec h2 {
+    font-size: 50px;
+  }
+
+  .sheets-sec button {
+    width: 300px;
+    height: 110px;
+    padding: 5px;
+    font-size: 50px;
+  }
+
+  .technical-page {
+    flex-direction: column-reverse;
+  }
+
+  .slide-sec {
+    background-color: #d50707;
+    height: 70vh;
+    width: 100vw;
+    border-top-left-radius: 125px;
+    border-top-right-radius: 125px;
+  }
+
+  .store img {
+    width: 400px;
+  }
+
+  .primision img {
+    width: 400px;
+  }
+
+  .technical-page h2 {
+    font-size: 50px;
+  }
+
+  .technical-page button {
+    width: 300px;
+    height: 110px;
+    padding: 5px;
+    font-size: 50px;
+  }
+
+  .store {
+    margin-bottom: 50px;
+    margin-top: 50px;
   }
 }

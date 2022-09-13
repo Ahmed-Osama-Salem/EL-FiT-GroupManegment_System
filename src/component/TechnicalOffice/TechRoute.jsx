@@ -17,7 +17,7 @@ function TechRoute() {
         </button>
       </div>
       <div className="store">
-        <img src="../images/storeImg.png" alt="store" />
+        <img src="./images/storeImg.png" alt="store" />
         <h2>إدارة المخازن</h2>
         <button
           className="btn2"
@@ -28,7 +28,7 @@ function TechRoute() {
         </button>
       </div>
       <div className="primision">
-        <img src="../images/primision.png" alt="store" />
+        <img src="./images/primision.png" alt="store" />
         <h2>أذونات التوريد</h2>
         <button
           className="btn2"

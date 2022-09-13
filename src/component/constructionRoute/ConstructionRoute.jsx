@@ -21,7 +21,7 @@ function ConstructionRoute() {
         </button>
       </div>
       <div className="sheet3">
-        <img src="../images/sheet3.png" alt="pic" />
+        <img src="./images/sheet3.png" alt="pic" />
         <h2>الموقف التنفيذى الهندسى</h2>
         <button
           className="btn2"
@@ -32,7 +32,7 @@ function ConstructionRoute() {
         </button>
       </div>
       <div className="sheet1">
-        <img src="../images/sheet1.png" alt="pic" />
+        <img src="./images/sheet1.png" alt="pic" />
         <h2>أذونات صرف</h2>
         <button className="btn2" type="button" onClick={RouteToPaySheet}>
           اضغط هنا
