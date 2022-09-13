@@ -19,9 +19,7 @@ import PrimisionSheet from "./TechnicalOffice/PrimisionSheet";
 import StoreSheet from "./TechnicalOffice/storePage/StoreSheet";
 
 function App() {
-  const [userData, setUserData] = useState(
-    JSON.parse(localStorage.getItem("token"))
-  );
+  const [userData, setUserData] = useState(null);
   const [cellData, setCellData] = useState(
     JSON.parse(localStorage.getItem("constCells"))
   );
