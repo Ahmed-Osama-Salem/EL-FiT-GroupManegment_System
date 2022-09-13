@@ -1,7 +1,7 @@
 {
   "name": "my-app",
   "version": "0.1.0",
-  "homepage": "http//:Ahmed-Osama-Salem.github.io/EL-FiT-GroupManegment_System",
+  "homepage": "https://Ahmed-Osama-Salem.github.io/EL-FiT-GroupManegment_System",
   "private": true,
   "dependencies": {
     "@headlessui/react": "^1.6.6",
