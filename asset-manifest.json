@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/http//:Ahmed-Osama-Salem.github.io/EL-FiT-GroupManegment_System/static/css/main.3d10672c.css",
-    "main.js": "/http//:Ahmed-Osama-Salem.github.io/EL-FiT-GroupManegment_System/static/js/main.624ba4b3.js",
+    "main.js": "/http//:Ahmed-Osama-Salem.github.io/EL-FiT-GroupManegment_System/static/js/main.98af617a.js",
     "index.html": "/http//:Ahmed-Osama-Salem.github.io/EL-FiT-GroupManegment_System/index.html",
     "main.3d10672c.css.map": "/http//:Ahmed-Osama-Salem.github.io/EL-FiT-GroupManegment_System/static/css/main.3d10672c.css.map",
-    "main.624ba4b3.js.map": "/http//:Ahmed-Osama-Salem.github.io/EL-FiT-GroupManegment_System/static/js/main.624ba4b3.js.map"
+    "main.98af617a.js.map": "/http//:Ahmed-Osama-Salem.github.io/EL-FiT-GroupManegment_System/static/js/main.98af617a.js.map"
   },
   "entrypoints": [
     "static/css/main.3d10672c.css",
-    "static/js/main.624ba4b3.js"
+    "static/js/main.98af617a.js"
   ]
 }
