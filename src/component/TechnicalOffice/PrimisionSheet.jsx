@@ -220,7 +220,7 @@ function PrimisionSheet() {
   return (
     <section className="crud-sec-prim">
       <div className="crud-wide-prim">
-        <div>
+        <div className="prim-print">
           <h2>اذونــات التــوريــد</h2>
           <button
             type="button"

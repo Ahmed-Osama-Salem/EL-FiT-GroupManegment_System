@@ -1142,6 +1142,7 @@ h2 {
   .styled-table td {
     padding: 8px 3px;
     border: 1px solid black;
+    color: #171212;
   }
   .tech-list td {
     border: none;
@@ -1149,6 +1150,30 @@ h2 {
   }
 
   .flex-btn {
+    display: none;
+  }
+
+  .store-wide {
+    display: none;
+  }
+
+  .styled-table-pay th:last-child {
+    display: none;
+  }
+
+  .crud-wide-pay {
+    display: none;
+  }
+
+  th:last-child {
+    display: none;
+  }
+
+  .prim-print {
+    display: none;
+  }
+
+  .search-input {
     display: none;
   }
 }
