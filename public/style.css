@@ -1145,11 +1145,12 @@ h2 {
     color: #171212;
   }
 
-  .styled-table-pay th,
+  /* .styled-table-pay th,
   .styled-table-pay td {
+    padding: 8px 3px;
     border: 1px solid black;
     color: #171212;
-  }
+  } */
 
   .tech-list td {
     border: none;
@@ -1164,11 +1165,7 @@ h2 {
     display: none;
   }
 
-  .styled-table-pay th:last-child {
-    display: none;
-  }
-
-  .styled-table th:last-child {
+  .print {
     display: none;
   }
 

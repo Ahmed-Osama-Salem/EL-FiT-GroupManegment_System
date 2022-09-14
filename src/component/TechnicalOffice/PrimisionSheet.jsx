@@ -420,7 +420,7 @@ function PrimisionSheet() {
                 <th>المتبقى</th>
                 <th>الملاحظات</th>
                 <th>التوقيعات</th>
-                <th>التعديلات</th>
+                <th className="print">التعديلات</th>
               </tr>
             </thead>
             <tbody>

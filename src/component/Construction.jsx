@@ -476,7 +476,7 @@ function Construction(props) {
             <th>نسبة الانجاز</th>
             <th>ملاحظات</th>
             <th>التوقيعات</th>
-            <th>تعديلات</th>
+            <th className="print">تعديلات</th>
           </tr>
         </thead>
         <tbody>
