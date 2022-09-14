@@ -16,6 +16,7 @@ function StoreSheet() {
   const [backEndId, setBackEndId] = useState();
   let dateRef = useRef();
   let noteRef = useRef();
+  let signitureRef = useRef();
 
   // states for search and filter
   const [search, setSearch] = useState("");
@@ -82,7 +83,13 @@ function StoreSheet() {
       // console.log("update");
       mongoStoreData[tmp].formText.storeDate = dateRef.current.value;
       mongoStoreData[tmp].formText.notes = noteRef.current.value;
-      putStoreToMongo(backEndId, dateRef.current.value, noteRef.current.value);
+      mongoStoreData[tmp].formText.sign = signitureRef.current.value;
+      putStoreToMongo(
+        backEndId,
+        dateRef.current.value,
+        noteRef.current.value,
+        signitureRef.current.value
+      );
       setIsAdd(true);
     }
   };
@@ -133,17 +140,19 @@ function StoreSheet() {
     // console.log(id);
     dateRef.current.value = mongoStoreData[id].formText.storeDate;
     noteRef.current.value = mongoStoreData[id].formText.notes;
+    signitureRef.current.value = mongoStoreData[id].formText.sign;
     setTmp(id);
     setBackEndId(mongoId);
     setIsAdd(false);
   };
 
-  const putStoreToMongo = (mongoId, newDate, newNote) => {
+  const putStoreToMongo = (mongoId, newDate, newNote, newStoreSign) => {
     Axios.put(
       `https://elfit-group-system.herokuapp.com/updateStore/${mongoId}`,
       {
         newDate: newDate,
         newNote: newNote,
+        newStoreSign: newStoreSign,
       }
     );
   };
@@ -210,7 +219,12 @@ function StoreSheet() {
               ref={noteRef}
             />
             <label>توقيعات</label>
-            <input type="text" name="sign" onChange={handelFormText} />
+            <input
+              type="text"
+              name="sign"
+              onChange={handelFormText}
+              ref={signitureRef}
+            />
           </div>
           <button type="submit" className="btn2">
             {isAdd ? "اضافة خلية" : "تعديل خلية"}

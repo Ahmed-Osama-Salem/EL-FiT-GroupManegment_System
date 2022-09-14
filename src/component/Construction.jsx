@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Axios from "axios";
 import ConsTable from "./ConsTable";
 import { useNavigate } from "react-router-dom";
@@ -36,6 +36,11 @@ function Construction(props) {
   let id = currentDate.toLocaleDateString();
   let time = currentDate.toLocaleTimeString();
 
+  let signNameRef = useRef();
+  const [tmp, setTmp] = useState();
+  const [servId, setServId] = useState();
+  const [isUpdate, setIsUpdate] = useState(true);
+
   //handel input values of form
   function handelConsInputs(e) {
     const newInput = e.target.value;
@@ -46,17 +51,18 @@ function Construction(props) {
   // handel mapping of items in form
   function handelConsForm(e) {
     e.preventDefault();
-    setAllText(allText);
-
-    // setItems((preVlaue) => {
-    //   return [...preVlaue, allText];
-    // });
-
-    setText(text);
-    subtractTimes();
-    subtractMin();
-    postToMongo();
-    getDataFromMongo();
+    if (isUpdate) {
+      setAllText(allText);
+      setText(text);
+      subtractTimes();
+      subtractMin();
+      postToMongo();
+      getDataFromMongo();
+    } else {
+      mongoData[tmp].allText.twqi3 = signNameRef.current.value;
+      putConstrToMongo(servId, signNameRef.current.value);
+      setIsUpdate(true);
+    }
   }
 
   //handel axios to get data and connect with mongodb to render data
@@ -183,7 +189,18 @@ function Construction(props) {
 
   //update on cell of table
 
-  const updateCell = (mongoId) => {};
+  const updateCell = (id, mongoId) => {
+    signNameRef.current.value = mongoData[id].allText.twqi3;
+    setTmp(id);
+    setServId(mongoId);
+    setIsUpdate(false);
+  };
+
+  const putConstrToMongo = (mongoId, newConstrDate) => {
+    Axios.put(`https://elfit-group-system.herokuapp.com/update/${mongoId}`, {
+      newConstrDate: newConstrDate,
+    });
+  };
 
   //show data of one cell when click on show btn
   const cellNav = useNavigate();
@@ -378,10 +395,15 @@ function Construction(props) {
             <br />
           </div>
           <h3>التـوقيــعـات</h3>
-          <input type="text" name="twqi3" onChange={handelConsInputs} />
+          <input
+            type="text"
+            name="twqi3"
+            onChange={handelConsInputs}
+            ref={signNameRef}
+          />
           <div className="btn-sec">
             <button type="submit" className="btn2">
-              أضافة
+              {isUpdate ? "أضافة" : "تعديل توقيع"}
             </button>
           </div>
         </form>
@@ -492,7 +514,7 @@ function Construction(props) {
                   techItem={text}
                   mosadItem={textMosad}
                   onRemove={() => removeCell(index, singleItem._id)}
-                  onUpdate={() => updateCell(singleItem._id)}
+                  onUpdate={() => updateCell(index, singleItem._id)}
                   onShowCell={() => showCellOnClick(index)}
                 />
               );

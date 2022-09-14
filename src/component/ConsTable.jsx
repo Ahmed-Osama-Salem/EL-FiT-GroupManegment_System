@@ -58,7 +58,7 @@ function ConsTable(props) {
         <button
           type="button"
           className="btn3"
-          onClick={() => props.onUpdate(props.item._id)}
+          onClick={() => props.onUpdate(props.num, props.item._id)}
         >
           تعديل الخلية
         </button>

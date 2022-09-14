@@ -15,6 +15,9 @@ function PrimisionSheet() {
   let inputRef = useRef();
   let paidRef = useRef();
   let paidSubRef = useRef();
+  let noteRef = useRef();
+  let signRef = useRef();
+  let totalRef = useRef();
 
   const [isAdd, setIsAdd] = useState(true);
   const [tmp, setTmp] = useState();
@@ -69,11 +72,17 @@ function PrimisionSheet() {
       mongoPrimData[tmp].formData.supplyDate = inputRef.current.value;
       mongoPrimData[tmp].formData.paid = paidRef.current.value;
       mongoPrimData[tmp].formData.subPaid = paidSubRef.current.value;
+      mongoPrimData[tmp].formData.notes = noteRef.current.value;
+      mongoPrimData[tmp].formData.sign = signRef.current.value;
+      mongoPrimData[tmp].formData.total = totalRef.current.value;
       putToMongo(
         backId,
         inputRef.current.value,
         paidRef.current.value,
-        paidSubRef.current.value
+        paidSubRef.current.value,
+        noteRef.current.value,
+        signRef.current.value,
+        totalRef.current.value
       );
       setIsAdd(true);
     }
@@ -135,18 +144,32 @@ function PrimisionSheet() {
     inputRef.current.value = mongoPrimData[id].formData.supplyDate;
     paidSubRef.current.value = mongoPrimData[id].formData.subPaid;
     paidRef.current.value = mongoPrimData[id].formData.paid;
+    noteRef.current.value = mongoPrimData[id].formData.notes;
+    signRef.current.value = mongoPrimData[id].formData.sign;
+    totalRef.current.value = mongoPrimData[id].formData.total;
     setTmp(id);
     setBackID(mongoId);
     setIsAdd(false);
   };
 
-  const putToMongo = (mongoId, newData, newPaid, newSubPaid) => {
+  const putToMongo = (
+    mongoId,
+    newData,
+    newPaid,
+    newSubPaid,
+    newNote,
+    newSign,
+    newTotal
+  ) => {
     Axios.put(
       `https://elfit-group-system.herokuapp.com/updatePrim/${mongoId}`,
       {
         newData: newData,
         newPaid: newPaid,
         newSubPaid: newSubPaid,
+        newNote: newNote,
+        newSign: newSign,
+        newTotal: newTotal,
       }
     );
     // console.log(newData);
@@ -283,12 +306,27 @@ function PrimisionSheet() {
             <div className="form-submit">
               <div>
                 <label>اجمالى التوريد</label>
-                <input type="number" name="total" onChange={handelFormData} />
+                <input
+                  type="number"
+                  name="total"
+                  onChange={handelFormData}
+                  ref={totalRef}
+                />
 
                 <label>الملاحظات</label>
-                <input type="text" name="notes" onChange={handelFormData} />
+                <input
+                  type="text"
+                  name="notes"
+                  onChange={handelFormData}
+                  ref={noteRef}
+                />
                 <label>التوقيعات</label>
-                <input type="text" name="sign" onChange={handelFormData} />
+                <input
+                  type="text"
+                  name="sign"
+                  onChange={handelFormData}
+                  ref={signRef}
+                />
               </div>
               <div>
                 <label> تاريخ الصرف</label>

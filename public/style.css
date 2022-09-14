@@ -96,10 +96,16 @@ h1 {
   border: none;
   background-color: #d50707;
   color: ghostwhite;
+  transition: 0.2s ease-in-out;
 }
 
 .form input::placeholder {
   color: aliceblue;
+}
+
+.form input:focus {
+  filter: drop-shadow(4px 4px 6px black);
+  transform: scale(1.1);
 }
 
 .form-label {
@@ -129,7 +135,7 @@ h1 {
 
 .footer {
   width: 100%;
-  height: 90px;
+  height: 110px;
   background-color: #d50707;
   box-sizing: border-box;
   margin-top: 60px;
@@ -261,17 +267,16 @@ h2 {
   flex-direction: column;
   align-items: center;
   font-family: "Cairo", sans-serif;
-  background-color: whitesmoke;
+  background-image: url(https://img.freepik.com/free-photo/blur-hospital-clinic-interior_74190-5203.jpg?w=2000);
 }
 
 .user-card {
-  width: 40%;
-  margin: 20px 0;
+  width: 80%;
+  margin: 35px 0;
   text-align: center;
   padding: 30px 30px;
-  border-radius: 5px;
   background-color: azure;
-  border-radius: 10px;
+  border-radius: 23px;
   filter: drop-shadow(4px 4px 6px rgb(65, 58, 58));
 }
 
