@@ -1144,6 +1144,13 @@ h2 {
     border: 1px solid black;
     color: #171212;
   }
+
+  .styled-table-pay th,
+  .styled-table-pay td {
+    border: 1px solid black;
+    color: #171212;
+  }
+
   .tech-list td {
     border: none;
     text-align: left;
@@ -1161,11 +1168,11 @@ h2 {
     display: none;
   }
 
-  .crud-wide-pay {
+  .styled-table th:last-child {
     display: none;
   }
 
-  th:last-child {
+  .crud-wide-pay {
     display: none;
   }
 
