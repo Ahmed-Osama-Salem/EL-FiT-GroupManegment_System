@@ -1153,7 +1153,8 @@ h2 {
   } */
 
   .tech-list td {
-    border: none;
+    border: 1px solid black;
+    padding: 0 15px;
     text-align: left;
   }
 
@@ -1381,5 +1382,48 @@ h2 {
   .store {
     margin-bottom: 50px;
     margin-top: 50px;
+  }
+}
+
+@media only screen and (min-device-width: 1400px) {
+  .header img {
+    width: 220px;
+    top: 150px;
+  }
+
+  .header-text {
+    line-height: 70px;
+  }
+
+  .header-text h1 {
+    font-size: 80px;
+  }
+
+  .header-text p {
+    font-size: 40px;
+  }
+
+  .form {
+    width: 460px;
+    height: 500px;
+    filter: drop-shadow(4px 4px 6px black);
+    margin-top: 0;
+    border-radius: 50px;
+  }
+
+  .form input {
+    width: 350px;
+    border-radius: 14px;
+    font-size: 30px;
+  }
+
+  .form label {
+    font-size: 25px;
+  }
+
+  .footer {
+    height: 123px;
+    margin-top: 130px;
+    font-size: 1.5rem;
   }
 }
