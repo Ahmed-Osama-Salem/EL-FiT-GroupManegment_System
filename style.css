@@ -1122,6 +1122,14 @@ h2 {
   margin-left: 20px;
 }
 
+.print-dev {
+  display: none;
+}
+
+.foot-print {
+  display: none;
+}
+
 @media print {
   .crud-wide {
     display: none;
@@ -1180,6 +1188,26 @@ h2 {
 
   .search-input {
     display: none;
+  }
+
+  .print-dev {
+    display: block;
+    text-align: center;
+  }
+
+  .print-dev img {
+    width: 70px;
+  }
+
+  .print-info {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .foot-print {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
   }
 }
 
