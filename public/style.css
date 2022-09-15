@@ -1384,8 +1384,21 @@ h2 {
     margin-top: 50px;
   }
 }
-
 @media only screen and (min-device-width: 1400px) {
+  .header img {
+    top: 97px;
+  }
+
+  .footer {
+    margin-top: 102px;
+  }
+
+  .home-contact {
+    height: 66.5px;
+  }
+}
+
+@media only screen and (min-device-width: 1800px) {
   .header img {
     width: 220px;
     top: 150px;
