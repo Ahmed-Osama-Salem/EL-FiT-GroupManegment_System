@@ -1202,6 +1202,7 @@ h2 {
   .print-info {
     display: flex;
     justify-content: space-around;
+    flex-direction: row-reverse;
   }
 
   .foot-print {
