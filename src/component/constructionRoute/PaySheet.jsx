@@ -272,6 +272,15 @@ function PaySheet() {
         </div>
         <ToastContainer />
       </div>
+      <div className="print-dev">
+        <img src="./images/fit-logo1.png" />
+        <h2>الفيت جروب</h2>
+        <div className="print-info">
+          <h3>: المشروع</h3>
+          <h3>: التاريخ</h3>
+          <h3>: رقم الاسبوع</h3>
+        </div>
+      </div>
       <div className="table-pay">
         <table className="styled-table-pay">
           <thead>
@@ -328,6 +337,10 @@ function PaySheet() {
               })}
           </tbody>
         </table>
+      </div>
+      <div className="foot-print">
+        <h3>: المراجع-المهندس</h3>
+        <h3>: الختم</h3>
       </div>
     </section>
   );
