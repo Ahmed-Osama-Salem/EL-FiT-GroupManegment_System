@@ -274,7 +274,7 @@ function PaySheet() {
       </div>
       <div className="print-dev">
         <img src="./images/fit-logo1.png" />
-        <h2>الفيت جروب</h2>
+        <h2 style={{ textAlign: "center" }}>الفيت جروب</h2>
         <div className="print-info">
           <h3>: المشروع</h3>
           <h3>: التاريخ</h3>
