@@ -1426,4 +1426,56 @@ h2 {
     margin-top: 130px;
     font-size: 1.5rem;
   }
+
+  .home-contact {
+    height: 70%;
+  }
+
+  .home-contact img {
+    width: 300px;
+  }
+
+  .home-contact h2 {
+    font-size: 40px;
+  }
+
+  .home-avatar {
+    width: 67px;
+  }
+
+  .profile {
+    font-size: 25px;
+    width: 90px;
+  }
+  .profile:hover {
+    box-shadow: inset 90px 0 0 0 0 #d50707;
+  }
+
+  .avatar-sec {
+    align-items: center;
+  }
+
+  .sheets-sec img {
+    width: 315px;
+  }
+
+  .sheet1 {
+    margin-left: 175px;
+  }
+
+  .sheet3 {
+    margin-left: 225px;
+  }
+
+  .store img {
+    width: 315px;
+  }
+
+  .primision img {
+    width: 315px;
+  }
+
+  .store {
+    margin: 0 255px;
+  }
 }
