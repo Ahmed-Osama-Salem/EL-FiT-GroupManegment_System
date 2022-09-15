@@ -1142,7 +1142,7 @@ h2 {
     width: 200px;
     filter: drop-shadow(6px 4px 6px black);
     text-align: center;
-    width: max-content;
+    width: fit-content;
     box-sizing: border-box;
   }
 
