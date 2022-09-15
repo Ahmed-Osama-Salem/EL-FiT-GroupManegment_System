@@ -8,6 +8,7 @@ function TechRoute() {
   return (
     <section className="technical-page">
       <div className="slide-sec">
+        <img src="./images/fit-logo.png" alt="logo" />
         <button
           className="btn2"
           type="button"

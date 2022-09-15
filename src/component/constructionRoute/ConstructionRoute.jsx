@@ -12,6 +12,7 @@ function ConstructionRoute() {
   return (
     <section className="sheets-sec">
       <div className="slide-sec">
+        <img src="./images/fit-logo.png" alt="logo" />
         <button
           className="btn2"
           type="button"
