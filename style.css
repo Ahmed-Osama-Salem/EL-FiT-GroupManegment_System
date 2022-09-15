@@ -1386,15 +1386,96 @@ h2 {
 }
 @media only screen and (min-device-width: 1400px) {
   .header img {
+    width: 220px;
     top: 97px;
   }
 
   .footer {
     margin-top: 102px;
+    height: 123px;
+    font-size: 1.5rem;
   }
 
   .home-contact {
-    height: 66.5px;
+    height: 66.5%;
+  }
+
+  .header-text {
+    line-height: 70px;
+  }
+
+  .header-text h1 {
+    font-size: 80px;
+  }
+
+  .header-text p {
+    font-size: 40px;
+  }
+
+  .form {
+    width: 460px;
+    height: 500px;
+    filter: drop-shadow(4px 4px 6px black);
+    margin-top: 0;
+    border-radius: 50px;
+  }
+
+  .form input {
+    width: 350px;
+    border-radius: 14px;
+    font-size: 30px;
+  }
+
+  .form label {
+    font-size: 25px;
+  }
+
+  .home-contact img {
+    width: 300px;
+  }
+
+  .home-contact h2 {
+    font-size: 40px;
+  }
+
+  .home-avatar {
+    width: 67px;
+  }
+
+  .profile {
+    font-size: 25px;
+    width: 90px;
+  }
+  .profile:hover {
+    box-shadow: inset 90px 0 0 0 0 #d50707;
+  }
+
+  .avatar-sec {
+    align-items: center;
+  }
+
+  .sheets-sec img {
+    width: 315px;
+  }
+
+  .sheet1 {
+    margin-left: 175px;
+  }
+
+  .sheet3 {
+    margin-left: 225px;
+  }
+
+  .store img {
+    width: 315px;
+  }
+
+  .primision img {
+    width: 315px;
+  }
+
+  .store {
+    margin: 0 255px;
   }
 }
 
