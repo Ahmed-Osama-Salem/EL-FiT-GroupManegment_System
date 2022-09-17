@@ -8,7 +8,7 @@ function ProjectRouteStore() {
   return (
     <section className="projects-sec">
       <h1>قائــمة المشــاريــع</h1>
-      <p> اذونات التوريد</p>
+      <p> ادارة المخازن</p>
       <div className="project-wide">
         <div className="flex-projects">
           <div

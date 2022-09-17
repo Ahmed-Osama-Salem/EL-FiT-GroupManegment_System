@@ -768,6 +768,16 @@ h2 {
   text-align: center;
 }
 
+.crud-wide-pay h3 {
+  font-family: "Cairo", sans-serif;
+  background-color: #d50707;
+  color: aliceblue;
+  border-radius: 20px;
+  display: inline-block;
+  padding: 14px;
+  margin: 15px auto;
+}
+
 .crud-wide-pay input {
   margin: 35px auto;
 }
@@ -897,6 +907,17 @@ h2 {
 .crud-wide-prim h2 {
   text-align: right;
 }
+
+.crud-wide-prim h3 {
+  font-family: "Cairo", sans-serif;
+  background-color: #d50707;
+  color: aliceblue;
+  border-radius: 20px;
+  display: inline-block;
+  padding: 14px;
+  margin: 15px auto;
+}
+
 .add-mordin {
   width: 100%;
   display: flex;
@@ -1060,6 +1081,16 @@ h2 {
 
 .store-sec h2 {
   text-align: right;
+}
+
+.store-sec h4 {
+  font-family: "Cairo", sans-serif;
+  background-color: #d50707;
+  color: aliceblue;
+  border-radius: 20px;
+  display: inline-block;
+  padding: 14px;
+  margin: 15px auto;
 }
 
 .store-wide {
