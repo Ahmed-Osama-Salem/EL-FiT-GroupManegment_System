@@ -27,9 +27,11 @@ function ProjectRoute() {
             <h2>تطوير عواصم المحافظات و المدن الكبرى</h2>
           </div>
         </div>
-        <button className="btn2" onClick={() => backToConstRoute("/sheets")}>
-          رجــوع
-        </button>
+        <div className="btn-center">
+          <button className="btn2" onClick={() => backToConstRoute("/sheets")}>
+            رجــوع
+          </button>
+        </div>
       </div>
     </section>
   );
