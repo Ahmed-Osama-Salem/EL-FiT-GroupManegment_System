@@ -20,6 +20,8 @@ import StoreSheet from "./TechnicalOffice/storePage/StoreSheet";
 import ProjectRoute from "./constructionRoute/ProjectRoute";
 import NewConstructionSheet from "./constructionRoute/NewConstruction/NewConstructionSheet";
 import ProjectRoutePay from "./constructionRoute/NewConstruction/ProjectsRouteTables/ProjectRoutePay";
+import ProjectRoutePrim from "./TechnicalOffice/ProjectRoutePrim";
+import ProjectRouteStore from "./TechnicalOffice/storePage/ProjectsRouteStore/ProjectRouteStore";
 
 function App() {
   const [userData, setUserData] = useState(null);
@@ -122,6 +124,8 @@ function App() {
         <Route path="store-sheet" element={<StoreSheet />} />
         <Route path="projects" element={<ProjectRoute />} />
         <Route path="project-pay" element={<ProjectRoutePay />} />
+        <Route path="project-prim" element={<ProjectRoutePrim />} />
+        <Route path="project-Store" element={<ProjectRouteStore />} />
         <Route path="projectTwo" element={<NewConstructionSheet />} />
       </Routes>
     </HashRouter>

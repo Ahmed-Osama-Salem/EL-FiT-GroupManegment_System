@@ -23,7 +23,7 @@ function TechRoute() {
         <button
           className="btn2"
           type="button"
-          onClick={() => navToStoreSheet("/store-sheet")}
+          onClick={() => navToStoreSheet("/project-Store")}
         >
           اضغط هنا
         </button>
@@ -34,7 +34,7 @@ function TechRoute() {
         <button
           className="btn2"
           type="button"
-          onClick={() => navToPrimSheet("/primision-sheet")}
+          onClick={() => navToPrimSheet("/project-prim")}
         >
           اضغط هنا
         </button>

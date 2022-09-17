@@ -225,7 +225,7 @@ function PrimisionSheet() {
           <button
             type="button"
             className="btn4"
-            onClick={() => backToTechRoute("/Technical-office")}
+            onClick={() => backToTechRoute("/project-prim")}
           >
             الرجــوع
           </button>
