@@ -773,7 +773,7 @@ h2 {
   background-color: #d50707;
   color: aliceblue;
   border-radius: 20px;
-  display: inline-block;
+  text-align: center;
   padding: 14px;
   margin: 15px auto;
 }
@@ -913,7 +913,7 @@ h2 {
   background-color: #d50707;
   color: aliceblue;
   border-radius: 20px;
-  display: inline-block;
+  text-align: center;
   padding: 14px;
   margin: 15px auto;
 }
@@ -1088,7 +1088,7 @@ h2 {
   background-color: #d50707;
   color: aliceblue;
   border-radius: 20px;
-  display: inline-block;
+  text-align: center;
   padding: 14px;
   margin: 15px auto;
 }
@@ -1419,7 +1419,7 @@ h2 {
   .home-contact {
     flex-direction: column-reverse;
     height: 80%;
-    margin-bottom: 153px;
+    margin-bottom: 102px;
   }
 
   .home-contact img {
@@ -1437,17 +1437,21 @@ h2 {
   }
 
   .profile {
-    width: 90px;
-    font-size: 30px;
+    display: none;
   }
 
   .home-avatar {
-    width: 78px;
+    width: 130px;
+    margin-top: 0;
   }
 
   .avatar-sec {
     display: flex;
     align-items: center;
+    border-radius: 100px;
+    margin-top: 10px;
+    background-image: linear-gradient(to right, #d50707, #f3f3f3);
+    padding: 0 10px;
   }
 
   .home-head button {
@@ -1560,6 +1564,67 @@ h2 {
   .store {
     margin-bottom: 50px;
     margin-top: 50px;
+  }
+
+  .projects-sec h1 {
+    font-size: 3.5rem;
+    color: white;
+    text-align: center;
+    background-color: rgb(192, 27, 35);
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    filter: drop-shadow(0px 1px 11px black);
+    padding: 15px 0;
+  }
+
+  .projects-sec p {
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: "Cairo", sans-serif;
+    margin-top: 20px;
+  }
+
+  .flex-projects {
+    width: 80%;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 174px auto;
+    flex-direction: column;
+  }
+
+  .flex-projects img {
+    width: 500px;
+  }
+
+  .flex-projects h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: aliceblue;
+    padding: 8px 3px;
+  }
+
+  .project-two {
+    background-color: rgb(192, 27, 35);
+    border-top-right-radius: 103px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+    margin: 100px auto;
+  }
+
+  .btn-center button {
+    width: 260px;
+    padding: 13px;
+    font-size: 30px;
+  }
+
+  .btn-center button:hover {
+    box-shadow: inset 260px 0 0 0 #d50707;
+    color: antiquewhite;
   }
 }
 @media only screen and (min-device-width: 1400px) {
