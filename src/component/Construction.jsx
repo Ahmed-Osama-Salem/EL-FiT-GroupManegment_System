@@ -3,6 +3,7 @@ import Axios from "axios";
 import ConsTable from "./ConsTable";
 import { useNavigate } from "react-router-dom";
 import moment from "moment";
+import { DownloadTableExcel } from "react-export-table-to-excel";
 
 function Construction(props) {
   const [allText, setAllText] = useState({
@@ -37,6 +38,7 @@ function Construction(props) {
   let time = currentDate.toLocaleTimeString();
 
   let signNameRef = useRef();
+  const tableRef = useRef();
   const [tmp, setTmp] = useState();
   const [servId, setServId] = useState();
   const [isUpdate, setIsUpdate] = useState(true);
@@ -457,7 +459,16 @@ function Construction(props) {
           <h3>: رقم الاسبوع</h3>
         </div>
       </div>
-      <table className="styled-table">
+      <div className="excel-btn">
+        <DownloadTableExcel
+          filename="الموقف التنفيذى درة كرز"
+          sheet="الموقف التنفيذى درة كرز"
+          currentTableRef={tableRef.current}
+        >
+          <button className="btn4">export to excel</button>
+        </DownloadTableExcel>
+      </div>
+      <table className="styled-table" ref={tableRef}>
         <thead>
           <tr className="style-tabal-head">
             <th>الرقم المسلسل</th>

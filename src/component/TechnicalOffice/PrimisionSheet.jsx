@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import PrimisionTable from "./PrimisionTable";
 import Axios from "axios";
 import moment from "moment";
+import { DownloadTableExcel } from "react-export-table-to-excel";
 
 function PrimisionSheet() {
   const backToTechRoute = useNavigate();
@@ -18,6 +19,7 @@ function PrimisionSheet() {
   let noteRef = useRef();
   let signRef = useRef();
   let totalRef = useRef();
+  const tableRef = useRef(null);
 
   const [isAdd, setIsAdd] = useState(true);
   const [tmp, setTmp] = useState();
@@ -409,8 +411,17 @@ function PrimisionSheet() {
             <h3>: رقم الاسبوع</h3>
           </div>
         </div>
+        <div className="excel-btn">
+          <DownloadTableExcel
+            filename="اذونات توريد درة كرز"
+            sheet="اذونات توريد درة كرز"
+            currentTableRef={tableRef.current}
+          >
+            <button className="btn4">export to excel</button>
+          </DownloadTableExcel>
+        </div>
         <div className="table-pay">
-          <table className="styled-table-pay">
+          <table className="styled-table-pay" ref={tableRef}>
             <thead>
               <tr>
                 <th>الرقم</th>

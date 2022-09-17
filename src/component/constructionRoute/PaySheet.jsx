@@ -5,6 +5,7 @@ import Axios from "axios";
 import moment from "moment";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { DownloadTableExcel } from "react-export-table-to-excel";
 
 function PaySheet() {
   const [allPayText, setAllPayText] = useState({
@@ -36,6 +37,7 @@ function PaySheet() {
   let reciverRef = useRef();
   let notesRef = useRef();
   let signRef = useRef();
+  const tableRef = useRef(null);
 
   // states for search and filter
   const [search, setSearch] = useState("");
@@ -282,8 +284,17 @@ function PaySheet() {
           <h3>: رقم الاسبوع</h3>
         </div>
       </div>
+      <div className="excel-btn">
+        <DownloadTableExcel
+          filename="اذونات صرف درة كرز"
+          sheet="اذونات صرف درة كرز"
+          currentTableRef={tableRef.current}
+        >
+          <button className="btn4">export to excel</button>
+        </DownloadTableExcel>
+      </div>
       <div className="table-pay">
-        <table className="styled-table-pay">
+        <table className="styled-table-pay" ref={tableRef}>
           <thead>
             <tr>
               <th>الرقم </th>
