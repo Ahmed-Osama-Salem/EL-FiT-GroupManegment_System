@@ -1,4 +1,8 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
+import Axios from "axios";
+import NewConstructionTable from "./NewConstructionTable";
+import { useNavigate } from "react-router-dom";
+import moment from "moment";
 
 function NewConstructionSheet() {
   const [allText, setAllText] = useState({
@@ -513,7 +517,7 @@ function NewConstructionSheet() {
             })
             .map((singleItem, index) => {
               return (
-                <ConsTable
+                <NewConstructionTable
                   key={singleItem._id}
                   num={index}
                   id={time}

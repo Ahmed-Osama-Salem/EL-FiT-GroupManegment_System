@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 function NewConstructionTable(props) {
   const [timeNow] = useState(props.item.time);
