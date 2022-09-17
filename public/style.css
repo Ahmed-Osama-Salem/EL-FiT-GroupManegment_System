@@ -1595,12 +1595,12 @@ h2 {
   }
 
   .flex-projects img {
-    width: 500px;
+    width: 520px;
   }
 
   .flex-projects h2 {
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 1.3rem;
     color: aliceblue;
     padding: 8px 3px;
   }
