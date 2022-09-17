@@ -6,6 +6,7 @@ import Preload from "./preloade-comp/Preload";
 function Home(props) {
   const navSheets = useNavigate();
   const navToTechRoute = useNavigate();
+  const navToProfile = useNavigate();
   const navToConstSheets = () => {
     navSheets("/sheets");
   };
@@ -24,6 +25,7 @@ function Home(props) {
             className="home-avatar"
             src={props.userData.avatar}
             alt="avatar"
+            onClick={() => navToProfile("/profile")}
           />
           <Link className="profile " to="/profile">
             profile
