@@ -1145,9 +1145,14 @@ h2 {
 }
 
 .projects-sec h1 {
-  font-size: 2rem;
-  color: red;
+  font-size: 2.5rem;
+  color: white;
   text-align: center;
+  background-color: rgb(192, 27, 35);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  filter: drop-shadow(1px 1px 1px rgb(192, 27, 35));
+  padding: 15px 0;
 }
 
 .project-wide {
@@ -1225,7 +1230,7 @@ h2 {
     width: 200px;
     filter: drop-shadow(6px 4px 6px black);
     text-align: center;
-    width: fit-content;
+    width: max-content;
     box-sizing: border-box;
   }
 
@@ -1242,6 +1247,13 @@ h2 {
     border: 1px solid black;
     color: #171212;
   } */
+
+  .table-section {
+    margin: 40px auto;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+  }
 
   .tech-list td {
     border: 1px solid black;
