@@ -1,20 +1,17 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-function ProjectRoute() {
+function ProjectRoutePay() {
   const navToSheet = useNavigate();
   const backToConstRoute = useNavigate();
   const navToNewSheet = useNavigate();
   return (
     <section className="projects-sec">
       <h1>قائــمة المشــاريــع</h1>
-      <p>الموقف التنفيذى الهندسى</p>
+      <p> اذونات الصرف</p>
       <div className="project-wide">
         <div className="flex-projects">
-          <div
-            className="project-one"
-            onClick={() => navToSheet("/constructionSheet")}
-          >
+          <div className="project-one" onClick={() => navToSheet("/pay-sheet")}>
             <img
               src="https://ipropertyeg.com/wp-content/uploads/2022/01/dorra-compound-750x470.jpg"
               alt="dora"
@@ -23,7 +20,7 @@ function ProjectRoute() {
           </div>
           <div
             className="project-two"
-            onClick={() => navToNewSheet("/projectTwo")}
+            // onClick={() => navToNewSheet("/projectTwo")}
           >
             <img
               src="https://ipropertyeg.com/wp-content/uploads/2022/01/dorra-compound-750x470.jpg"
@@ -52,4 +49,4 @@ function ProjectRoute() {
   );
 }
 
-export default ProjectRoute;
+export default ProjectRoutePay;

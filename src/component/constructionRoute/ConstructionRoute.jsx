@@ -7,7 +7,7 @@ function ConstructionRoute() {
   const backToHome = useNavigate();
 
   const RouteToPaySheet = () => {
-    navToPaySheet("/pay-sheet");
+    navToPaySheet("/project-pay");
   };
   return (
     <section className="sheets-sec">
