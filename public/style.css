@@ -1136,6 +1136,80 @@ h2 {
   margin-bottom: 25px;
 }
 
+/*projects-section*/
+
+.projects-sec {
+  width: 100%;
+  height: 100vh;
+  background-color: whitesmoke;
+  padding: 20px;
+}
+
+.projects-sec h1 {
+  font-size: 2rem;
+  color: red;
+  text-align: center;
+}
+
+.project-wide {
+  width: 100%;
+  height: 80vh;
+}
+
+.flex-projects {
+  width: 80%;
+  height: 70vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.flex-projects img {
+  width: 360px;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+  border-top-left-radius: 5px;
+  filter: drop-shadow(1px 1px 1px black);
+}
+
+.flex-projects h2 {
+  text-align: center;
+  font-size: 1.3rem;
+  color: aliceblue;
+  padding: 8px 3px;
+}
+
+.project-one {
+  background-color: rgb(192, 27, 35);
+  border-top-right-radius: 103px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+
+.project-two {
+  background-color: rgb(192, 27, 35);
+  border-top-right-radius: 103px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+
+.project-one:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(2px 2px 4px black);
+}
+
+.project-two:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(2px 2px 4px black);
+}
+
 @media print {
   .crud-wide {
     display: none;

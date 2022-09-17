@@ -27,7 +27,7 @@ function ConstructionRoute() {
         <button
           className="btn2"
           type="button"
-          onClick={() => navToConstructionSheet("/constructionSheet")}
+          onClick={() => navToConstructionSheet("/projects")}
         >
           اضغط هنا
         </button>

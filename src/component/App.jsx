@@ -17,6 +17,7 @@ import PaySheet from "./constructionRoute/PaySheet";
 import TechRoute from "./TechnicalOffice/TechRoute";
 import PrimisionSheet from "./TechnicalOffice/PrimisionSheet";
 import StoreSheet from "./TechnicalOffice/storePage/StoreSheet";
+import ProjectRoute from "./constructionRoute/ProjectRoute";
 
 function App() {
   const [userData, setUserData] = useState(null);
@@ -117,6 +118,7 @@ function App() {
         <Route path="Technical-office" element={<TechRoute />} />
         <Route path="primision-sheet" element={<PrimisionSheet />} />
         <Route path="store-sheet" element={<StoreSheet />} />
+        <Route path="projects" element={<ProjectRoute />} />
       </Routes>
     </HashRouter>
   );
