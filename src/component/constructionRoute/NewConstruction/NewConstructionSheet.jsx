@@ -1,10 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
-import Axios from "axios";
-import ConsTable from "./ConsTable";
-import { useNavigate } from "react-router-dom";
-import moment from "moment";
+import React from "react";
 
-function Construction(props) {
+function NewConstructionSheet() {
   const [allText, setAllText] = useState({
     rkmElw7da: "",
     elbnd: "",
@@ -69,7 +65,7 @@ function Construction(props) {
   //now we get all data that posted to data base as api
   // by useEffect
   function getDataFromMongo() {
-    Axios.get("https://elfit-group-system.herokuapp.com/read").then(
+    Axios.get("https://elfit-group-system.herokuapp.com/readNewPro").then(
       (response) => {
         setMongoData(response.data);
       }
@@ -83,7 +79,7 @@ function Construction(props) {
   //handel axios to post data and connect with mongodb backend server
 
   function postToMongo() {
-    Axios.post("https://elfit-group-system.herokuapp.com/insert", {
+    Axios.post("https://elfit-group-system.herokuapp.com/insertNewPro", {
       time: time,
       id: id,
       allText: allText,
@@ -184,7 +180,9 @@ function Construction(props) {
         return index !== id;
       })
     );
-    Axios.delete(`https://elfit-group-system.herokuapp.com/delete/${mongoId}`);
+    Axios.delete(
+      `https://elfit-group-system.herokuapp.com/deleteNewPro/${mongoId}`
+    );
   };
 
   //update on cell of table
@@ -197,24 +195,27 @@ function Construction(props) {
   };
 
   const putConstrToMongo = (mongoId, newConstrDate) => {
-    Axios.put(`https://elfit-group-system.herokuapp.com/update/${mongoId}`, {
-      newConstrDate: newConstrDate,
-    });
+    Axios.put(
+      `https://elfit-group-system.herokuapp.com/updateNewPro/${mongoId}`,
+      {
+        newConstrDate: newConstrDate,
+      }
+    );
   };
 
   //show data of one cell when click on show btn
-  const cellNav = useNavigate();
-  const storeArray = [];
-  function showCellOnClick(id) {
-    for (let i = 0; i < mongoData.length; i++) {
-      if (i === id) {
-        storeArray.push(mongoData[i]);
-        localStorage.setItem("constCells", JSON.stringify(storeArray));
-        props.saveCellData();
-        cellNav("/cellShow");
-      }
-    }
-  }
+  //   const cellNav = useNavigate();
+  //   const storeArray = [];
+  //   function showCellOnClick(id) {
+  //     for (let i = 0; i < mongoData.length; i++) {
+  //       if (i === id) {
+  //         storeArray.push(mongoData[i]);
+  //         localStorage.setItem("constCells", JSON.stringify(storeArray));
+  //         props.saveCellData();
+  //         cellNav("/cellShow");
+  //       }
+  //     }
+  //   }
 
   //search bar handeling
 
@@ -229,7 +230,7 @@ function Construction(props) {
       <div className="crud-wide">
         <div className="crud-head">
           <h2>المــوقف التنفيــذى الهنــدسى</h2>
-          <h3>( مشــروع درة الكــرز )</h3>
+          <h3>( مشــروع تطوير عواصم المحافظات و المدن الكبرى)</h3>
         </div>
         <button
           type="button"
@@ -525,7 +526,7 @@ function Construction(props) {
                   mosadItem={textMosad}
                   onRemove={() => removeCell(index, singleItem._id)}
                   onUpdate={() => updateCell(index, singleItem._id)}
-                  onShowCell={() => showCellOnClick(index)}
+                  //   onShowCell={() => showCellOnClick(index)}
                 />
               );
             })}
@@ -539,4 +540,4 @@ function Construction(props) {
   );
 }
 
-export default Construction;
+export default NewConstructionSheet;
