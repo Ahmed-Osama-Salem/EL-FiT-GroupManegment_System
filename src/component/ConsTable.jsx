@@ -41,12 +41,12 @@ function ConsTable(props) {
           ":" +
           props.subtractMin(props.item.allText.from, props.item.allText.to)}
       </td>
-      <td>{props.item.allText.noteAdd}</td>
-      <td>{props.item.allText.kmiatMon}</td>
-      <td>{props.item.allText.tnfizState}</td>
+      <td style={{ width: "200px" }}>{props.item.allText.noteAdd}</td>
+      <td style={{ width: "200px" }}>{props.item.allText.kmiatMon}</td>
+      <td style={{ width: "200px" }}>{props.item.allText.tnfizState}</td>
       <td>{props.item.allText.angaz} %</td>
-      <td>{props.item.allText.notes}</td>
-      <td>{props.item.allText.twqi3}</td>
+      <td style={{ width: "200px" }}>{props.item.allText.notes}</td>
+      <td style={{ width: "100px" }}>{props.item.allText.twqi3}</td>
       <div className="flex-btn">
         <button
           type="button"

@@ -29,8 +29,8 @@ function PrimisionTable(props) {
             <td style={{ paddingLeft: "8px" }}>{allSup.supplyName}</td>
             <td style={{ paddingLeft: "0" }}>{allSup.band}</td>
             <td style={{ paddingLeft: "8px" }}>{allSup.unit}</td>
-            <td style={{ paddingLeft: "35px" }}>{allSup.amount}</td>
-            <td style={{ paddingLeft: "20px" }}>{allSup.topic}</td>
+            <td style={{ paddingLeft: "10px" }}>{allSup.amount}</td>
+            <td style={{ paddingLeft: "10px" }}>{allSup.topic}</td>
             <td style={{ paddingLeft: "30px" }}>
               {getTotal(allSup.amount, allSup.topic)}
             </td>

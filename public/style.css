@@ -524,13 +524,14 @@ h2 {
 .table-section {
   margin: 40px auto;
   text-align: center;
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .tech-list {
   margin: 0 auto;
-  width: max-content;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .flex-btn {
@@ -1057,11 +1058,15 @@ h2 {
 .organize-supplies {
   width: 100%;
   text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
 .table-supply {
   margin: 5px auto;
   text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
 .organize-supplies td {
