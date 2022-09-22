@@ -6,8 +6,8 @@ function PayTable(props) {
   return (
     <tr key={props.num}>
       <td>{props.num + 1}</td>
-      <td>{dateNow}</td>
-      <td style={{ paddingLeft: "15px" }}>{timeNow}</td>
+      <td style={{ padding: "0 10px" }}>{dateNow}</td>
+      <td style={{ textAlign: "center" }}>{timeNow}</td>
       <td>{props.tableItems.allPayText.elwahdaName}</td>
       <td>{props.tableItems.allPayText.jobs}</td>
       <td>{props.tableItems.allPayText.contractorName}</td>
@@ -17,7 +17,9 @@ function PayTable(props) {
       <td>{props.tableItems.allPayText.payDate}</td>
       <td>{props.tableItems.allPayText.reciverName}</td>
       <td>{props.tableItems.allPayText.note}</td>
-      <td>{props.tableItems.allPayText.signiture}</td>
+      <td style={{ width: "100px" }}>
+        {props.tableItems.allPayText.signiture}
+      </td>
       <div className="flex-btn">
         <button
           type="button"

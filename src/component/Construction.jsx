@@ -450,10 +450,10 @@ function Construction(props) {
           </div>
         </div>
       </div>
-      <div className="print-dev">
+      <div className="print-dev-con">
         <img src="./images/fit-logo1.png" />
         <h2 style={{ textAlign: "center" }}>الفيت جروب</h2>
-        <div className="print-info">
+        <div className="print-info-con">
           <h3>: المشروع</h3>
           <h3>: التاريخ</h3>
           <h3>: رقم الاسبوع</h3>
@@ -542,7 +542,7 @@ function Construction(props) {
             })}
         </tbody>
       </table>
-      <div className="foot-print">
+      <div className="foot-print-con">
         <h3>: المراجع-المهندس</h3>
         <h3>: الختم</h3>
       </div>
