@@ -279,7 +279,7 @@ function StoreSheet() {
               <th>الرقم</th>
               <th>التاريخ</th>
               <th>الوقت</th>
-              <tr className="table-supply">
+              <tr className="table-supply-store">
                 <th>العدد</th>
                 <th>المخزن / العهد</th>
               </tr>

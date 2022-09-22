@@ -12,7 +12,7 @@ function StoreTable(props) {
       <td>{time}</td>
       {storeInputs.map((s, i) => {
         return (
-          <tr key={i}>
+          <tr key={i} className="store-grid">
             <td style={{ paddingLeft: "30px" }}>{s.totalNum}</td>
             <td style={{ paddingLeft: "30px" }}>{s.storeItem}</td>
           </tr>

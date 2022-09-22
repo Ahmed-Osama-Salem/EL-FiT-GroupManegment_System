@@ -1286,6 +1286,16 @@ h2 {
   display: none;
 }
 
+.table-supply-store {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.store-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
 @media print {
   .crud-wide {
     display: none;
@@ -1399,6 +1409,16 @@ h2 {
 
   .excel-btn {
     display: none;
+  }
+
+  .table-supply-store {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .store-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
