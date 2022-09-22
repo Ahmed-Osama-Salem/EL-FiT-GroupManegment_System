@@ -476,7 +476,6 @@ h2 {
 }
 
 .styled-table {
-  border-collapse: collapse;
   margin: 25px 10px;
   font-size: 1.1em;
   font-family: "Cairo", sans-serif;
@@ -489,12 +488,12 @@ h2 {
 
 .styled-table th,
 .styled-table td {
-  padding: 12px 15px;
+  padding: 12px 10px;
 }
 
 .styled-table tr.active-row {
   font-weight: bold;
-  color: #009879;
+  color: black;
   font-size: 1em;
 }
 
@@ -1187,6 +1186,7 @@ h2 {
   width: 100vw;
   height: 100vh;
   background-color: whitesmoke;
+  overflow: hidden;
 }
 
 .projects-sec h1 {
@@ -1197,7 +1197,7 @@ h2 {
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
   filter: drop-shadow(0px 1px 11px black);
-  padding: 15px 0;
+  padding: 5px 0;
 }
 
 .projects-sec p {
@@ -1269,6 +1269,18 @@ h2 {
 
 .btn-center {
   text-align: center;
+}
+
+.excel-btn {
+  text-align: center;
+}
+
+.print-dev-con {
+  display: none;
+}
+
+.print-info-con {
+  display: none;
 }
 
 @media print {
@@ -1357,6 +1369,29 @@ h2 {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-around;
+  }
+
+  .print-dev-con {
+    display: block;
+    text-align: center;
+    font-size: 3.5rem;
+  }
+
+  .print-dev-con img {
+    width: 120px;
+  }
+
+  .print-info-con {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row-reverse;
+  }
+
+  .foot-print-con {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    font-size: 3.5rem;
   }
 }
 
