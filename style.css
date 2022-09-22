@@ -1282,6 +1282,9 @@ h2 {
 .print-info-con {
   display: none;
 }
+.foot-print-con {
+  display: none;
+}
 
 @media print {
   .crud-wide {
@@ -1392,6 +1395,10 @@ h2 {
     flex-direction: row-reverse;
     justify-content: space-around;
     font-size: 3.5rem;
+  }
+
+  .excel-btn {
+    display: none;
   }
 }
 
