@@ -6,6 +6,7 @@ import moment from "moment";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { DownloadTableExcel } from "react-export-table-to-excel";
+import { projectData } from "../../projectsData/projects";
 
 function PaySheet() {
   const [allPayText, setAllPayText] = useState({
@@ -163,7 +164,7 @@ function PaySheet() {
     <section className="crud-sec">
       <div className="crud-wide-pay">
         <h2>أذونــــات الصــرف</h2>
-        <h3>( مشــروع درة الكــرز )</h3>
+        <h3> ( {projectData[0].name} ) </h3>
         <button
           type="button"
           className="btn2"

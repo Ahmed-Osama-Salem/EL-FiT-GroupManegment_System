@@ -4,6 +4,7 @@ import PrimisionTable from "./PrimisionTable";
 import Axios from "axios";
 import moment from "moment";
 import { DownloadTableExcel } from "react-export-table-to-excel";
+import { projectData } from "../../projectsData/projects";
 
 function PrimisionSheet() {
   const backToTechRoute = useNavigate();
@@ -224,7 +225,7 @@ function PrimisionSheet() {
       <div className="crud-wide-prim">
         <div className="prim-print">
           <h2>اذونــات التــوريــد</h2>
-          <h3>( مشــروع درة الكــرز )</h3>
+          <h3> ( {projectData[0].name} ) </h3>
           <button
             type="button"
             className="btn4"

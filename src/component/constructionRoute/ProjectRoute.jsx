@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { projectData } from "../../projectsData/projects";
 
 function ProjectRoute() {
   const navToSheet = useNavigate();
@@ -19,7 +20,7 @@ function ProjectRoute() {
               src="https://ipropertyeg.com/wp-content/uploads/2022/01/dorra-compound-750x470.jpg"
               alt="dora"
             />
-            <h2>درة الكرز - شلبى للمقاولات</h2>
+            <h2> ( {projectData[0].name} ) </h2>
           </div>
           <div
             className="project-two"
@@ -29,7 +30,7 @@ function ProjectRoute() {
               src="https://ipropertyeg.com/wp-content/uploads/2022/01/dorra-compound-750x470.jpg"
               alt="dora"
             />
-            <h2>تطوير عواصم المحافظات و المدن الكبرى</h2>
+            <h2> ( {projectData[1].name} ) </h2>
           </div>
           <div
             className="project-one"

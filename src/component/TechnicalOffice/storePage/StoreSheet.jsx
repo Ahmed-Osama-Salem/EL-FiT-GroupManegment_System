@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import StoreTable from "./StoreTable";
 import Axios from "axios";
 import moment from "moment";
+import { projectData } from "../../../projectsData/projects";
 
 function StoreSheet() {
   const backToTechnicalRoute = useNavigate();
@@ -161,7 +162,7 @@ function StoreSheet() {
     <section className="store-sec">
       <div className="store-wide">
         <h2>إدارة المخازن و العهد</h2>
-        <h4>( مشــروع درة الكــرز )</h4>
+        <h4> ( {projectData[0].name} ) </h4>
         <button
           type="button"
           className="btn4"

@@ -4,6 +4,7 @@ import ConsTable from "./ConsTable";
 import { useNavigate } from "react-router-dom";
 import moment from "moment";
 import { DownloadTableExcel } from "react-export-table-to-excel";
+import { projectData } from "../projectsData/projects";
 
 function Construction(props) {
   const [allText, setAllText] = useState({
@@ -230,7 +231,7 @@ function Construction(props) {
       <div className="crud-wide">
         <div className="crud-head">
           <h2>المــوقف التنفيــذى الهنــدسى</h2>
-          <h3>( مشــروع درة الكــرز )</h3>
+          <h3>( {projectData[0].name} )</h3>
         </div>
         <button
           type="button"
