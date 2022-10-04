@@ -36,7 +36,6 @@ function Construction(props) {
 
   let id = currentDate.toLocaleDateString();
   let time = currentDate.toLocaleTimeString();
-
   let signNameRef = useRef();
   const tableRef = useRef();
   const [tmp, setTmp] = useState();
