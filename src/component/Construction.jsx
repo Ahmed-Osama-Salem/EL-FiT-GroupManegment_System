@@ -8,6 +8,7 @@ import { projectData } from "../projectsData/projects";
 
 function Construction(props) {
   const [allText, setAllText] = useState({
+    dateNow: "",
     rkmElw7da: "",
     elbnd: "",
     topics: "",
@@ -35,7 +36,7 @@ function Construction(props) {
 
   const currentDate = new Date();
 
-  let id = currentDate.toLocaleDateString();
+  // let id = currentDate.toLocaleDateString();
   let time = currentDate.toLocaleTimeString();
   let signNameRef = useRef();
   const tableRef = useRef();
@@ -87,7 +88,6 @@ function Construction(props) {
   function postToMongo() {
     Axios.post("https://elfit-group-system.herokuapp.com/insert", {
       time: time,
-      id: id,
       allText: allText,
       text: text,
       textMosad: textMosad,
@@ -241,6 +241,8 @@ function Construction(props) {
           رجــوع
         </button>
         <form className="crud-form" onSubmit={handelConsForm}>
+          <label>تاريخ </label>
+          <input type="date" name="dateNow" onChange={handelConsInputs} />
           <label>الوحــدة</label>
           <input type="text" name="rkmElw7da" onChange={handelConsInputs} />
           <label>البنــد</label>
@@ -527,7 +529,7 @@ function Construction(props) {
                   key={singleItem._id}
                   num={index}
                   id={time}
-                  date={id}
+                  // date={id}
                   item={singleItem}
                   handelTime={handelTime}
                   subtractTimes={subtractTimes}

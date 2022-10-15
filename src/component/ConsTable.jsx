@@ -2,14 +2,14 @@ import React, { useState } from "react";
 
 function ConsTable(props) {
   const [timeNow] = useState(props.item.time);
-  const [dateNow] = useState(props.item.id);
+  // const [dateNow] = useState(props.item.id);
   const [techData] = useState(props.item.text);
   const [mosadData] = useState(props.item.textMosad);
 
   return (
     <tr key={props.num} className="active-row">
       <td>{props.num + 1}</td>
-      <td>{dateNow}</td>
+      <td>{props.item.allText.dateNow}</td>
       <td>{timeNow}</td>
       <td>{props.item.allText.rkmElw7da}</td>
       <td>{props.item.allText.elbnd}</td>
