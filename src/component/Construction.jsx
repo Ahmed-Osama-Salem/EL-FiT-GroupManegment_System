@@ -40,6 +40,16 @@ function Construction(props) {
   let time = currentDate.toLocaleTimeString();
   let signNameRef = useRef();
   const tableRef = useRef();
+  const dateNowRef = useRef();
+  const rkmElw7daRef = useRef();
+  const elbndRef = useRef();
+  const techNumberRef = useRef();
+  const mosadNumberRef = useRef();
+  const noteAddRef = useRef();
+  const kmiatMonRef = useRef();
+  const tnfizStateRef = useRef();
+  const angazRef = useRef();
+  const notesRef = useRef();
   const [tmp, setTmp] = useState();
   const [servId, setServId] = useState();
   const [isUpdate, setIsUpdate] = useState(true);
@@ -63,7 +73,30 @@ function Construction(props) {
       getDataFromMongo();
     } else {
       mongoData[tmp].allText.twqi3 = signNameRef.current.value;
-      putConstrToMongo(servId, signNameRef.current.value);
+      mongoData[tmp].allText.dateNow = dateNowRef.current.value;
+      mongoData[tmp].allText.rkmElw7da = rkmElw7daRef.current.value;
+      mongoData[tmp].allText.elbnd = elbndRef.current.value;
+      mongoData[tmp].allText.techNumber = techNumberRef.current.value;
+      mongoData[tmp].allText.mosadNumber = mosadNumberRef.current.value;
+      mongoData[tmp].allText.noteAdd = noteAddRef.current.value;
+      mongoData[tmp].allText.kmiatMon = kmiatMonRef.current.value;
+      mongoData[tmp].allText.tnfizState = tnfizStateRef.current.value;
+      mongoData[tmp].allText.angaz = angazRef.current.value;
+      mongoData[tmp].allText.notes = notesRef.current.value;
+      putConstrToMongo(
+        servId,
+        signNameRef.current.value,
+        dateNowRef.current.value,
+        rkmElw7daRef.current.value,
+        elbndRef.current.value,
+        techNumberRef.current.value,
+        mosadNumberRef.current.value,
+        noteAddRef.current.value,
+        kmiatMonRef.current.value,
+        tnfizStateRef.current.value,
+        angazRef.current.value,
+        notesRef.current.value
+      );
       setIsUpdate(true);
     }
   }
@@ -193,14 +226,47 @@ function Construction(props) {
 
   const updateCell = (id, mongoId) => {
     signNameRef.current.value = mongoData[id].allText.twqi3;
+    dateNowRef.current.value = mongoData[id].allText.dateNow;
+    rkmElw7daRef.current.value = mongoData[id].allText.rkmElw7da;
+    elbndRef.current.value = mongoData[id].allText.elbnd;
+    techNumberRef.current.value = mongoData[id].allText.techNumber;
+    mosadNumberRef.current.value = mongoData[id].allText.mosadNumber;
+    noteAddRef.current.value = mongoData[id].allText.noteAdd;
+    kmiatMonRef.current.value = mongoData[id].allText.kmiatMon;
+    tnfizStateRef.current.value = mongoData[id].allText.tnfizState;
+    angazRef.current.value = mongoData[id].allText.angaz;
+    notesRef.current.value = mongoData[id].allText.notes;
     setTmp(id);
     setServId(mongoId);
     setIsUpdate(false);
   };
 
-  const putConstrToMongo = (mongoId, newConstrDate) => {
+  const putConstrToMongo = (
+    mongoId,
+    newConstrDate,
+    dateNow,
+    rkmElw7da,
+    elbnd,
+    techNumber,
+    mosadNumber,
+    noteAdd,
+    kmiatMon,
+    tnfizState,
+    angaz,
+    notes
+  ) => {
     Axios.put(`https://elfit-group-system.herokuapp.com/update/${mongoId}`, {
       newConstrDate: newConstrDate,
+      dateNow: dateNow,
+      rkmElw7da: rkmElw7da,
+      elbnd: elbnd,
+      techNumber: techNumber,
+      mosadNumber: mosadNumber,
+      noteAdd: noteAdd,
+      kmiatMon: kmiatMon,
+      tnfizState: tnfizState,
+      angaz: angaz,
+      notes: notes,
     });
   };
 
@@ -244,9 +310,19 @@ function Construction(props) {
           <label>تاريخ </label>
           <input type="text" name="dateNow" onChange={handelConsInputs} />
           <label>الوحــدة</label>
-          <input type="text" name="rkmElw7da" onChange={handelConsInputs} />
+          <input
+            type="text"
+            name="rkmElw7da"
+            onChange={handelConsInputs}
+            ref={rkmElw7daRef}
+          />
           <label>البنــد</label>
-          <input type="text" name="elbnd" onChange={handelConsInputs} />
+          <input
+            type="text"
+            name="elbnd"
+            onChange={handelConsInputs}
+            ref={elbndRef}
+          />
           <div className="select-inputs">
             <label htmlFor="topics">نـوع المصنـعيـات</label>
             <select id="topics" name="topics" onChange={handelConsInputs}>
@@ -279,6 +355,7 @@ function Construction(props) {
               type="number"
               name="techNumber"
               onChange={handelConsInputs}
+              ref={techNumberRef}
             />
             <button
               type="button"
@@ -318,6 +395,7 @@ function Construction(props) {
                 type="number"
                 name="mosadNumber"
                 onChange={handelConsInputs}
+                ref={mosadNumberRef}
               />
               <button
                 type="button"
@@ -381,13 +459,33 @@ function Construction(props) {
 
           <div>
             <label>مذكرة الخصم / الاضافة</label>
-            <input type="text" name="noteAdd" onChange={handelConsInputs} />
+            <input
+              type="text"
+              name="noteAdd"
+              onChange={handelConsInputs}
+              ref={noteAddRef}
+            />
             <label>كميات المون</label>
-            <input type="text" name="kmiatMon" onChange={handelConsInputs} />
+            <input
+              type="text"
+              name="kmiatMon"
+              onChange={handelConsInputs}
+              ref={kmiatMonRef}
+            />
             <label> الموقف التنفيذى</label>
-            <input type="text" name="tnfizState" onChange={handelConsInputs} />
+            <input
+              type="text"
+              name="tnfizState"
+              onChange={handelConsInputs}
+              ref={tnfizStateRef}
+            />
             <label>نسبة الانجاز</label>
-            <input type="text" name="angaz" onChange={handelConsInputs} />
+            <input
+              type="text"
+              name="angaz"
+              onChange={handelConsInputs}
+              ref={angazRef}
+            />
           </div>
           <div className="note-sec">
             <label>ملاحظات</label>
@@ -396,6 +494,7 @@ function Construction(props) {
               cols="50"
               onChange={handelConsInputs}
               name="notes"
+              ref={notesRef}
             ></textarea>
             <br />
           </div>
