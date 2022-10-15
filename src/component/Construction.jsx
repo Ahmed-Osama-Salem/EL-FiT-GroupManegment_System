@@ -242,7 +242,7 @@ function Construction(props) {
         </button>
         <form className="crud-form" onSubmit={handelConsForm}>
           <label>تاريخ </label>
-          <input type="date" name="dateNow" onChange={handelConsInputs} />
+          <input type="text" name="dateNow" onChange={handelConsInputs} />
           <label>الوحــدة</label>
           <input type="text" name="rkmElw7da" onChange={handelConsInputs} />
           <label>البنــد</label>
