@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/EL-FiT-GroupManegment_System/static/css/main.3d10672c.css",
-    "main.js": "/EL-FiT-GroupManegment_System/static/js/main.0bad048e.js",
+    "main.js": "/EL-FiT-GroupManegment_System/static/js/main.de3a3761.js",
     "index.html": "/EL-FiT-GroupManegment_System/index.html",
     "main.3d10672c.css.map": "/EL-FiT-GroupManegment_System/static/css/main.3d10672c.css.map",
-    "main.0bad048e.js.map": "/EL-FiT-GroupManegment_System/static/js/main.0bad048e.js.map"
+    "main.de3a3761.js.map": "/EL-FiT-GroupManegment_System/static/js/main.de3a3761.js.map"
   },
   "entrypoints": [
     "static/css/main.3d10672c.css",
-    "static/js/main.0bad048e.js"
+    "static/js/main.de3a3761.js"
   ]
 }
