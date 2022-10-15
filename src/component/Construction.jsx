@@ -518,7 +518,10 @@ function Construction(props) {
               if (searchDate === "" || searchDateTo === "") {
                 return dataFilter;
               } else if (
-                moment(dataFilter.id).isBetween(searchDate, searchDateTo)
+                moment(dataFilter.allText.dateNow).isBetween(
+                  searchDate,
+                  searchDateTo
+                )
               ) {
                 return dataFilter;
               }
