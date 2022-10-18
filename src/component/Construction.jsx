@@ -20,7 +20,7 @@ function Construction(props) {
     noteAdd: "",
     kmiatMon: "",
     tnfizState: "",
-    angaz: Number(),
+    angaz: "",
     notes: "",
     twqi3: "",
   });
@@ -33,26 +33,25 @@ function Construction(props) {
   const [searchTech, setSearchTech] = useState("");
   const [searchDate, setSearchDate] = useState("");
   const [searchDateTo, setSearchDateTo] = useState("");
-
+  const [tmp, setTmp] = useState();
+  const [servId, setServId] = useState();
+  const [isUpdate, setIsUpdate] = useState(true);
   const currentDate = new Date();
 
   // let id = currentDate.toLocaleDateString();
   let time = currentDate.toLocaleTimeString();
   let signNameRef = useRef();
-  const tableRef = useRef();
-  const dateNowRef = useRef();
-  const rkmElw7daRef = useRef();
-  const elbndRef = useRef();
-  const techNumberRef = useRef();
-  const mosadNumberRef = useRef();
-  const noteAddRef = useRef();
-  const kmiatMonRef = useRef();
-  const tnfizStateRef = useRef();
-  const angazRef = useRef();
-  const notesRef = useRef();
-  const [tmp, setTmp] = useState();
-  const [servId, setServId] = useState();
-  const [isUpdate, setIsUpdate] = useState(true);
+  let tableRef = useRef();
+  let dateNowRef = useRef();
+  let rkmElw7daRef = useRef();
+  let elbndRef = useRef();
+  let techNumberRef = useRef();
+  let mosadNumberRef = useRef();
+  let noteAddRef = useRef();
+  let kmiatMonRef = useRef();
+  let tnfizStateRef = useRef();
+  let angazRef = useRef();
+  let notesRef = useRef();
 
   //handel input values of form
   function handelConsInputs(e) {
@@ -72,6 +71,8 @@ function Construction(props) {
       postToMongo();
       getDataFromMongo();
     } else {
+      console.log("update");
+
       mongoData[tmp].allText.twqi3 = signNameRef.current.value;
       mongoData[tmp].allText.dateNow = dateNowRef.current.value;
       mongoData[tmp].allText.rkmElw7da = rkmElw7daRef.current.value;
@@ -308,7 +309,12 @@ function Construction(props) {
         </button>
         <form className="crud-form" onSubmit={handelConsForm}>
           <label>تاريخ </label>
-          <input type="text" name="dateNow" onChange={handelConsInputs} />
+          <input
+            type="text"
+            name="dateNow"
+            onChange={handelConsInputs}
+            ref={dateNowRef}
+          />
           <label>الوحــدة</label>
           <input
             type="text"
@@ -507,7 +513,7 @@ function Construction(props) {
           />
           <div className="btn-sec">
             <button type="submit" className="btn2">
-              {isUpdate ? "أضافة" : "تعديل توقيع"}
+              {isUpdate ? "أضافة" : "تعديل "}
             </button>
           </div>
         </form>
@@ -552,7 +558,7 @@ function Construction(props) {
         </div>
       </div>
       <div className="print-dev-con">
-        <img src="./images/fit-logo1.png" />
+        <img src="./images/fit-logo1.png" alt="samp" />
         <h2 style={{ textAlign: "center" }}>الفيت جروب</h2>
         <div className="print-info-con">
           <h3>: المشروع</h3>
