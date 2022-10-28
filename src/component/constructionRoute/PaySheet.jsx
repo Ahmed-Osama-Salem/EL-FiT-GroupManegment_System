@@ -236,7 +236,6 @@ function PaySheet() {
             name="elwahdaName"
             ref={elwahdaNameRef}
             onChange={handelPayInputs}
-            value={allPayText.elwahdaName}
           ></input>
           <label>الاعمال / البنود</label>
           <input type="text" name="jobs" ref={jobsRef} onChange={handelPayInputs}></input>
@@ -385,7 +384,7 @@ function PaySheet() {
                 if (searchDate === "" || searchDateTo === "") {
                   return dataFilter;
                 } else if (
-                  moment(dataFilter.dateNow).isBetween(searchDate, searchDateTo)
+                  moment(dataFilter.allPayText.dateNow).isBetween(searchDate, searchDateTo)
                 ) {
                   return dataFilter;
                 }
