@@ -10,6 +10,7 @@ import { projectData } from "../../projectsData/projects";
 
 function PaySheet() {
   const [allPayText, setAllPayText] = useState({
+    dateNow: "",
     elwahdaName: "",
     jobs: "",
     contractorName: "",
@@ -26,7 +27,7 @@ function PaySheet() {
 
   const currentDate = new Date();
 
-  let dateNow = currentDate.toLocaleDateString();
+  // let dateNow = currentDate.toLocaleDateString();
   let timeNow = currentDate.toLocaleTimeString();
 
   //states for update and id
@@ -34,6 +35,13 @@ function PaySheet() {
   const [tmp, setTmp] = useState();
   const [serverId, setServerID] = useState();
   let refReset = useRef();
+  let dateNowRef = useRef();
+  let elwahdaNameRef = useRef();
+  let jobsRef = useRef();
+  let contractorNameRef = useRef();
+  let bandRef = useRef();
+  let unitRef = useRef();
+  let kmiaRef = useRef();
   let inputField = useRef();
   let reciverRef = useRef();
   let notesRef = useRef();
@@ -71,14 +79,28 @@ function PaySheet() {
       notifyAdd();
     } else {
       console.log("update");
-      payItems[tmp].allPayText.payDate = inputField.current.value;
+      payItems[tmp].allPayText.dateNow = dateNowRef.current.value;
+      payItems[tmp].allPayText.elwahdaName = elwahdaNameRef.current.value;
+      payItems[tmp].allPayText.jobs = jobsRef.current.value; 
+      payItems[tmp].allPayText.contractorName = contractorNameRef.current.value; 
       payItems[tmp].allPayText.reciverName = reciverRef.current.value;
+      payItems[tmp].allPayText.band = bandRef.current.value; 
+      payItems[tmp].allPayText.unit = unitRef.current.value; 
+      payItems[tmp].allPayText.kmia = kmiaRef.current.value; 
+      payItems[tmp].allPayText.payDate = inputField.current.value;
       payItems[tmp].allPayText.note = notesRef.current.value;
       payItems[tmp].allPayText.signiture = signRef.current.value;
       putPayToMongo(
         serverId,
-        inputField.current.value,
+        dateNowRef.current.value,
+        elwahdaNameRef.current.value,
+        jobsRef.current.value,
+        contractorNameRef.current.value,
         reciverRef.current.value,
+        bandRef.current.value,
+        unitRef.current.value,
+        kmiaRef.current.value,
+        inputField.current.value,
         notesRef.current.value,
         signRef.current.value
       );
@@ -97,7 +119,6 @@ function PaySheet() {
   function postPayDataToMongo() {
     Axios.post("https://elfit-group-system.herokuapp.com/insertPay", {
       timeNow: timeNow,
-      dateNow: dateNow,
       allPayText: allPayText,
     });
   }
@@ -135,8 +156,15 @@ function PaySheet() {
   // remove one cell
   const updateOneCellPay = (id, mongoId) => {
     // console.log(id);
-    inputField.current.value = payItems[id].allPayText.payDate;
+    dateNowRef.current.value = payItems[id].allPayText.dateNow;
+    elwahdaNameRef.current.value = payItems[id].allPayText.elwahdaName;
+    jobsRef.current.value = payItems[id].allPayText.jobs;
+    contractorNameRef.current.value = payItems[id].allPayText.contractorName;
     reciverRef.current.value = payItems[id].allPayText.reciverName;
+    bandRef.current.value = payItems[id].allPayText.band;
+    unitRef.current.value = payItems[id].allPayText.unit;
+    kmiaRef.current.value = payItems[id].allPayText.kmia;
+    inputField.current.value = payItems[id].allPayText.payDate;
     notesRef.current.value = payItems[id].allPayText.note;
     signRef.current.value = payItems[id].allPayText.signiture;
     setTmp(id);
@@ -145,16 +173,32 @@ function PaySheet() {
     setIsEdit(false);
   };
 
+  
+
   const putPayToMongo = (
     mongoId,
-    newPayDate,
+    dateNowUP,
+    elwahdaNameUP,
+    jobsUP,
+    contractorNameUP,
     newPayReciver,
+    bandUP,
+    unitUP,
+    kmiaUP,
+    newPayDate,
     newPayNote,
     newPaySign
   ) => {
     Axios.put(`https://elfit-group-system.herokuapp.com/updatePay/${mongoId}`, {
-      newPayDate: newPayDate,
+      dateNowUP:dateNowUP,
+      elwahdaNameUP:elwahdaNameUP,
+      jobsUP:jobsUP,
+      contractorNameUP:contractorNameUP,
       newPayReciver: newPayReciver,
+      bandUP:bandUP,
+      unitUP:unitUP,
+      kmiaUP:kmiaUP,
+      newPayDate: newPayDate,
       newPayNote: newPayNote,
       newPaySign: newPaySign,
     });
@@ -177,29 +221,40 @@ function PaySheet() {
           onSubmit={handelSubmitOfPaySheet}
           ref={refReset}
         >
+          <label>التاريخ</label>
+          <input
+            type="text"
+            placeholder="mo/day/year"
+            name="dateNow"
+            ref={dateNowRef}
+            onChange={handelPayInputs}
+          ></input>
+
           <label>الوحدة / رقم العمارة</label>
           <input
             type="text"
             name="elwahdaName"
+            ref={elwahdaNameRef}
             onChange={handelPayInputs}
             value={allPayText.elwahdaName}
           ></input>
           <label>الاعمال / البنود</label>
-          <input type="text" name="jobs" onChange={handelPayInputs}></input>
+          <input type="text" name="jobs" ref={jobsRef} onChange={handelPayInputs}></input>
           <label>المقاول</label>
           <input
             type="text"
             placeholder="المقاول"
+            ref={contractorNameRef}
             name="contractorName"
             onChange={handelPayInputs}
           ></input>
 
           <label>البند</label>
-          <input type="text" name="band" onChange={handelPayInputs}></input>
+          <input type="text" name="band" ref={bandRef} onChange={handelPayInputs}></input>
           <label>الوحدة</label>
-          <input type="text" name="unit" onChange={handelPayInputs}></input>
+          <input type="text" name="unit" ref={unitRef} onChange={handelPayInputs}></input>
           <label>الكمية</label>
-          <input type="text" name="kmia" onChange={handelPayInputs}></input>
+          <input type="text" name="kmia" ref={kmiaRef} onChange={handelPayInputs}></input>
           <label>تاريخ الصرف</label>
           <input
             type="date"
@@ -277,7 +332,7 @@ function PaySheet() {
         <ToastContainer />
       </div>
       <div className="print-dev">
-        <img src="./images/fit-logo1.png" />
+        <img src="./images/fit-logo1.png" alt="samp" />
         <h2 style={{ textAlign: "center" }}>الفيت جروب</h2>
         <div className="print-info">
           <h3>: المشروع</h3>
@@ -340,7 +395,6 @@ function PaySheet() {
                   <PayTable
                     key={pay._id}
                     num={index}
-                    date={dateNow}
                     time={timeNow}
                     tableItems={pay}
                     payOnRemove={() => payOnRemove(index, pay._id)}

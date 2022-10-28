@@ -2,11 +2,13 @@ import React, { useState } from "react";
 
 function PayTable(props) {
   const [timeNow] = useState(props.tableItems.timeNow);
-  const [dateNow] = useState(props.tableItems.dateNow);
+  // const [dateNow] = useState(props.tableItems.dateNow);
   return (
     <tr key={props.num}>
       <td>{props.num + 1}</td>
-      <td style={{ padding: "0 10px" }}>{dateNow}</td>
+      <td style={{ padding: "0 10px" }}>
+        {props.tableItems.allPayText.dateNow}
+      </td>
       <td style={{ textAlign: "center" }}>{timeNow}</td>
       <td>{props.tableItems.allPayText.elwahdaName}</td>
       <td>{props.tableItems.allPayText.jobs}</td>
