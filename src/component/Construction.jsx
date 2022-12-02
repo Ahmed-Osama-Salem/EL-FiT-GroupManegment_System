@@ -106,7 +106,7 @@ function Construction(props) {
   //now we get all data that posted to data base as api
   // by useEffect
   function getDataFromMongo() {
-    Axios.get("https://elfit-group-system.herokuapp.com/read").then(
+    Axios.get("https://elfit-group-system.onrender.com/read").then(
       (response) => {
         setMongoData(response.data);
       }
@@ -120,7 +120,7 @@ function Construction(props) {
   //handel axios to post data and connect with mongodb backend server
 
   function postToMongo() {
-    Axios.post("https://elfit-group-system.herokuapp.com/insert", {
+    Axios.post("https://elfit-group-system.onrender.com/insert", {
       time: time,
       allText: allText,
       text: text,
@@ -220,7 +220,7 @@ function Construction(props) {
         return index !== id;
       })
     );
-    Axios.delete(`https://elfit-group-system.herokuapp.com/delete/${mongoId}`);
+    Axios.delete(`https://elfit-group-system.onrender.com/delete/${mongoId}`);
   };
 
   //update on cell of table
@@ -256,7 +256,7 @@ function Construction(props) {
     angazUpdate,
     notesUpdate
   ) => {
-    Axios.put(`https://elfit-group-system.herokuapp.com/update/${mongoId}`, {
+    Axios.put(`https://elfit-group-system.onrender.com/update/${mongoId}`, {
       newConstrDate: newConstrDate,
       dateNowUpdate: dateNowUpdate,
       rkmElw7daUpdate: rkmElw7daUpdate,
